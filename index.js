@@ -15,9 +15,11 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(name, price, category){
+    return { name, price, category}; 
 }
+console.log(createMenuItem('tacos', 8,'Lunch'));
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -28,6 +30,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
+console.log(createMenuItem('empanadas', 5,'Breakfast'));
+console.log(createMenuItem('juice', 3,'Lunch'));
+console.log(createMenuItem('Guava cookie', 10,'All Day '));
 
 
 
@@ -47,8 +52,16 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount(userType){
+    const isAcademic = userType === 'teacher' || userType === 'student';
+    const promoPrice = isAcademic  ? this.price - this.price*.25 : this.price - this.price*.10 ;
+    this.price = promoPrice;
+    return this.price;
+  }
 }
+//console.log(`burger teacher: `, burger.discount('teacher'));
+//console.log(`burger student: `, burger.discount('student'));
+console.log(`burger public: `, burger.discount('public'));
 
 
 
@@ -68,7 +81,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
+console.log(reviews[5].feedback);
 
 
 
